@@ -15,7 +15,7 @@ i{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: tajawal;
+    font-family: 'Tajawal', sans-serif;
     scroll-behavior: smooth;
     
     
@@ -52,6 +52,7 @@ a{
         top: 50%;
         left: 50%;
         display: grid;
+        width: fit-content;
         align-content: center;
         justify-items: center;
         font-weight: bolder;
@@ -137,10 +138,22 @@ body{
         position: fixed;
         width: 100%;
         z-index: 9;
-      nav{
+        &:after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            bottom: 0px;
+            right: -90%;
+            transition: right ease-in-out 0.2s;
+            opacity: 0;
+            background: rgb(0, 255, 0);
+        }
+        nav{
+          padding: 0 50px;
           font-weight: bolder;
           font-size: 20px;
-          border-bottom: solid 2px #4a0b8b;
+          border-bottom: solid 2px #e1d0ff;
           a{
               color: #333;
               transition: all ease-in-out 0.2s;
@@ -149,7 +162,7 @@ body{
                   color:#0d6de9;
               }
           }
-          background: $white-clr;
+          background: #280356;
           width: 100%;
           
           color: $white-clr;
@@ -163,17 +176,14 @@ body{
                   border-radius: 50px;
                   background-color: greenyellow ;
               }
-              .active{
-                  border-bottom: solid 2px crimson;
-                  font-size: 20px;
-              }
+              
               select{
-                background: linear-gradient(45deg, #1d176b, #3f51b5);
-                border-radius: 4px;
-                
+                background: linear-gradient(45deg, #5414c7, #9c0aef);
+                border-radius: 2px;
+                border: solid 0;
                 padding: 5px 11px;
                   
-                  margin: 5px 20px;
+                  margin: 5px 0;
                   
                   color: $white-clr;
                   font-weight: bolder;
@@ -192,7 +202,7 @@ body{
             #main-name{
                 margin-inline-end: auto;
                 padding: 10px;
-                margin-right:50px ;
+                
                 position: relative;
                 z-index: 1;
                 color: $white-clr;
@@ -213,11 +223,30 @@ body{
                   display: flex;
                   list-style: none;
                   padding: 10px 10px;
+                  position: relative;
+                  overflow: hidden;
+                  
                   a{
-                      color: rgb(107, 107, 107);
-                      text-decoration: none;
+                    color: #efefef;
+                    font-weight: 400;
+                    text-decoration: none;
+                    font-size: 18px;
                       
-                  }
+                    }
+                    &:hover>::after{
+                        bottom: 10%;
+                        transform-origin: right;
+                    }
+                    &:after{
+                        content: "";
+                        background: crimson;
+                        height: 2px;
+                        width: 100%;
+                        position: absolute;
+                        bottom: -10%;
+                        left: 0;
+                        
+                }
               }
           }
       }  
@@ -239,10 +268,11 @@ body{
     display: unset;
     min-width: 1000px;
     #main{
-        
+        position: relative;
         background: linear-gradient(327deg, #0b1d5e, #66039f);
         display: grid;
         grid-template-columns: 2fr 1fr;
+       
         .todown{
             position: absolute;
             bottom: -1%;
@@ -266,11 +296,17 @@ body{
         }
         .wrapper{
             display: grid;
-            height: 100vh;
+            height: 100%;
             padding: 50px;
+            position: relative;
             padding-top: 100px;
             align-items: center;
             justify-content: center;
+           
+            >*{
+                margin: 15px 0;
+            }
+            
             .announcement{
                 
                     color: $white-clr;
@@ -313,6 +349,9 @@ body{
             h1{
                 font-size: 3em;
                 color: #ced1ff;
+                &:hover #stoning{
+                    opacity: 1;
+                }
                 sup{
                     font-size: 18px;
                 }
@@ -325,7 +364,7 @@ body{
         top: +100%;
     }
     100%{
-        top: -450%;
+        top: -550%;
     }
 }
 .main_pre{
@@ -337,7 +376,7 @@ body{
     position: absolute;
     left: 3%;
     transform: rotate(0deg);
-    height: 89vh;
+    height: 89%;
     border-radius: 3px;
     background-color: #e6e6e6;
     background: linear-gradient(280deg, #3f51b5, #9c27b0);
@@ -464,7 +503,7 @@ body{
        // display: grid;
         font-size: 15px;
     
-        height: 50vh;
+        height: 50%;
         overflow: hidden;
         align-items: center;
         justify-content: center;
@@ -484,8 +523,9 @@ body{
             align-items: center;
             text-indent: 17px;
             h3{
-                background: linear-gradient(45deg, #ff5e00,#006de9);
+                background: linear-gradient(45deg, #ff5e00, #ef0a48);
                 padding: 10px 10px;
+                color: #f9f9f9;
                 border-radius: 5px;
                 text-indent: 0;
                 box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.26);
@@ -665,7 +705,8 @@ body{
             display: grid;
             font-weight: 500;
             align-items: center;
-            background: linear-gradient(310deg, #ffbe05, #f9e19c);
+            background: linear-gradient(310deg, #66039f, #5414c7);
+            color: #ddd9ff;
             justify-content: center;
             grid-template-rows: 0.5fr 4fr 0.5fr;
             margin-right: 20px;
@@ -680,9 +721,10 @@ body{
                 p{
                     float: right;
                     color: $white-clr;
-                    padding: 8px 11px;
-                    border-radius: 50px;
-                    background: linear-gradient(45deg, #9c27b0, #66039f);
+                    padding: 5px 13px;
+                    border-radius: 5px;
+                    background: linear-gradient(45deg, #f89d00, #ef0a48);
+                    margin-bottom: 16px;
                     font-weight: bolder;
                     position: relative;
                     margin-inline-end: auto;
@@ -692,14 +734,16 @@ body{
                         height: 3px;
                         background: $primary-clr;
                         position: absolute;
-                        top: 50%;
+                        top: -40%;
+                        right: -50%;
                         z-index: 1;
                     }
                 }
                 span{
                     padding: 9px 7px;
-                    background: linear-gradient(45deg, #0d6de9, #9c0aef);
-                    color: $white-clr;
+                    background: linear-gradient(312deg, #9c0aef, #8b05d7 85%);
+                    color: #f3f3f3;
+                   border-radius: 2px;
                     z-index: 7;
                     cursor: pointer;
                     margin: 0 5px;
@@ -707,24 +751,16 @@ body{
             }
             h4{
                 color: #fdfdfd;
-                border: solid 2px #9C0AEF;
-                border-radius: 50px;
+               
+                border-radius: 5px;
                 position: relative;
                 padding: 5px 13px;
-                background: linear-gradient(45deg, #9c27b0, #66039f);
+               
+                  background: linear-gradient(45deg, #f89d00, #ef0a48);
+
                 z-index: 7;
                 width: fit-content;
-                &::after{
-                    z-index: -1;
-                    margin-right: 6px;
-                    content: "";
-                    width: 100vw;
-                    background: $primary-clr;
-                    top: 50%;
-                    
-                    height: 2px;
-                    position: absolute;
-                }
+                
             }
         }
         .cardname{
@@ -806,7 +842,7 @@ body{
         position: relative;
         z-index: 2;
         border: solid 0;
-        background: #fff;
+        background:#ffffff4a;
         border-radius: 5px;
         height: 2px;
         width: 90%;
@@ -883,25 +919,30 @@ body{
     .aboutus{
         display: grid;
         grid-template-columns: 3fr 1fr 1fr;
-        color: $white-clr;
+        color: #dfceff;
         margin: 10px 50px 0 100px;
         position: relative;
         z-index: 7;
         padding: 20px 0;
         a{
             text-decoration: none;
-            color: $white-clr;
+            color: #ebe0ff;
             &:hover{
-                color: #dddddd;
+                color: #fff;
             }
         }
         h4{
-            padding: 10px;
+            padding: 10px 24px;
+            border-radius: 5px;
+            box-shadow: 0 0 24px 2px #00000038;
             margin: 10px 0;
+            
             width: fit-content;
+            
             height: fit-content;
-            background: #2100a5;
-            color: $white-clr;
+            background: linear-gradient(45deg, rgb(161 105 255), rgb(66 133 244));
+            color: #dadce0;
+        
         }
         .about{
             display: grid;
@@ -1218,7 +1259,9 @@ footer{
     padding-top: 20px;
     place-items: center;
   }
-  
+  .boxn4{
+    display: none !important;
+}
   .join-us .content .box {
     display: flex;
     padding: 20px;
@@ -1228,6 +1271,7 @@ footer{
     -webkit-box-shadow: 0 2px 15px rgb(0, 0, 0, 10%);
     -moz-box-shadow: 0 2px 15px rgb(0, 0, 0, 10%);
     box-shadow: 0 2px 15px rgb(0, 0, 0, 10%);
+    
   }
   
   
@@ -1424,21 +1468,137 @@ footer{
 
 
   /*mobile responsive*/
-  @media (max-width:500px) {
+  //viewport1
+  @media (max-width:1000px) {
+      .boxn4{
+          display: flex !important;
+      }
+      .active-box{
+          transform: scale(1);
+          background: white !important;
+          :is(h2,p){
+              color: #000000c2 !important;
+          }
+      }
+      
+  }
+  //viewport 2
+  @media (max-width:800px) {
+    .section .product .clothes .contain .list .new{
+        grid-column: 1/4;
+    }
+    .promote .wide .categories{
+        grid-column: 1/3;
+    }
+    .deal{
+        grid-column: 1/3;
+        grid-row-end: none;
+    }
+    .section .product .clothes .contain .list .list1,
+    .product .clothes .contain .listadd .list1{
+        grid-column: 1/4;
+    }
+    .wrapperar .wrapp .searcher .related{
+        display: grid !important;
+    }
+
+    .section .product {
+        padding: 0 !important;
+    }
+    .section,.wrapperar .wrapp {
+        padding: 0 !important;
+    }
+    .join-us .members .box div{
+        font-size:14px;
+    }
+      .facewrap{
+          i{
+            margin-inline-start: auto;
+          }
+      }
+      .who_r_w{
+          display: grid !important;
+          justify-items: center;
+          .title_who{
+              margin: 0;
+          }
+          .cards{
+              .moreinfo{
+                grid-template-columns: 1fr !important;
+                gap: 10px;
+                .info{
+                    text-align: center;
+                    justify-items: center;
+                    gap: 28px;
+
+                }
+                .media_links{
+                    a{
+                        width: 40% !important;
+                        margin: 10px 20px ;
+                    }
+                }
+              }
+          }
+      }
+      .full_list{
+          display: grid !important;
+          padding-left: 0 !important;
+          .facebbok{
+              width: 100% !important;
+          }
+          .mylist{
+            display: grid !important;
+            height: fit-content !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin: 19px;
+          }
+      }
+
+      .active-box{
+        transform: scale(1);
+       background: white !important;
+       h2{
+           color:black !important;
+       } 
+       p{
+           color: #101010 !important;
+       }
+       
+      }
       .thanks_to{
+          padding: 0 !important;
+          .title_who{
+              width: 100%;
+              margin: 0 !important;
+              border-radius: 0px;
+          }
           .cards{
               display: grid !important;
               align-items: center;
               justify-content: center;
               place-items: center;
+              .card{
+                  display: block !important;
+                  .booklist{
+                      display: grid !important;
+                      grid-template-columns: 1fr 1fr ;
+                      gap: 5px;
+                      p{
+                        grid-column-end: 3;
+                        grid-column-start: 1;
+                      }
+                  }
+              }
               .cardname{
-                  display: flex;
+                display: contents;
                   width: 100%;
               }
           }
       }
-      .square,.dont-need,.stil,.main_pre,.main-line{
-          display: none;
+      .all-pages,.square,.dont-need,.stil,.main_pre,.main-line,.todown,.wrapclasses,.allpages{
+          display: none !important;
       }
       .main-text,.web-name,.announcement{
           text-align: center;
@@ -1453,19 +1613,14 @@ footer{
           display: grid;
           grid-template-columns: 1fr !important;
       }
-      .all-pages{
-          display: flex;
-          width: 100%;
-          align-items: center;
-          justify-content: center;
-      }
+      
       .inputs1{
           width: 100% !important;
 
       }
       .who_r_w{
           .card{
-              height: 50vh;
+              height: 50%;
           }
           .cards{
               display: grid;
@@ -1479,9 +1634,11 @@ footer{
       }
       .end .aboutus{
           display: block !important;
+          width: 86% !important;
       }
       .anou{
           display: grid !important;
+          width: 86% !important;
       }
       .join-us{
           .members{
@@ -1512,6 +1669,7 @@ footer{
 }
 
 //SCROLLING
+
 
 
 

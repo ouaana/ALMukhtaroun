@@ -1,0 +1,18 @@
+
+.containerr{
+    padding: 50px;
+    height: 100vh;
+    .wrraper{
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        background: #e9e9e9;
+        height: 100%;
+        gap: 10px;
+        padding: 10px;
+        div{
+            background: white;
+            border-radius: 5px;
+            margin:  0;
+        }
+    }
+}
