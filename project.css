@@ -1,5 +1,5 @@
 .containerpro {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: relative;
   padding: 50px;
@@ -22,7 +22,7 @@
   background: #3f1493;
   padding: 14px;
   border-radius: 2px;
-  box-shadow: 0 0 20px 2px #00000042;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2588235294);
   margin-bottom: 10px;
 }
 .containerpro .wrapper .textdes .textwrap .getface a {
@@ -40,11 +40,11 @@
   margin-right: 5px;
 }
 .containerpro .wrapper .textdes .textwrap .para {
-  background: #2b4ae221;
+  background: rgba(43, 74, 226, 0.1294117647);
   padding: 20px;
   border-radius: 5px;
   margin: 28px 0;
-  box-shadow: 0 0 44px 2px #0000004d;
+  box-shadow: 0 0 44px 2px rgba(0, 0, 0, 0.3019607843);
 }
 .containerpro .wrapper .textdes .textwrap .title h3 {
   background: linear-gradient(45deg, #ff5e00, #006de9);
@@ -57,8 +57,8 @@
 }
 .containerpro .wrapper .videodes {
   background: linear-gradient(45deg, #4267b2, #66039f);
-  border: solid 0px #99999900;
-  box-shadow: 0 0 20px 2px #00000057;
+  border: solid 0px rgba(153, 153, 153, 0);
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3411764706);
   border-radius: 2px;
   height: 500px;
   width: 500px;
@@ -79,7 +79,7 @@
   justify-content: center;
   color: aliceblue;
   font-weight: 600;
-  box-shadow: 0 0 20px 2px #00000026;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1490196078);
   text-align: initial;
 }
 .containerpro .wrapper .videodes .doc a {
@@ -91,7 +91,7 @@
   margin-right: auto;
   align-items: center;
   border-radius: 2px;
-  box-shadow: 0 0 20px 2px #00000047;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2784313725);
 }
 .containerpro .wrapper .videodes:hover > .live {
   opacity: 1;
@@ -123,26 +123,38 @@
   border-radius: 2px;
 }
 
+.fouro {
+  height: 100vh;
+}
+
 .wrapit {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.wrapit .contain {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: grid;
   text-align: center;
-  color: #e0f6fd;
+  color: rgb(224, 246, 253);
   align-items: center;
   justify-content: center;
   padding: 69px;
   background: #400087;
-  box-shadow: 0 0 20px 2px #00000047;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2784313725);
   border-radius: 2px;
 }
 .wrapit a {
   padding: 10px 20px;
   font-weight: 600;
   border-radius: 2px;
-  color: #ffffffd2;
+  color: rgba(255, 255, 255, 0.8235294118);
   text-decoration: none;
   font-size: 18px;
   margin: auto;
@@ -154,4 +166,18 @@
 }
 .wrapit h4 {
   font-size: 2em;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    align-content: center;
+    justify-items: center;
+    margin-top: 50px;
+    grid-template-columns: 1fr !important;
+  }
+  .wrapper .title {
+    position: absolute;
+    top: 6%;
+    left: 30%;
+  }
 }/*# sourceMappingURL=project.css.map */

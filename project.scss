@@ -1,5 +1,5 @@
 .containerpro{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     position: relative;
     padding: 50px;
@@ -133,10 +133,18 @@
 }
 
 ///404 page
+.fouro{
+    height: 100vh;
+}
 .wrapit{
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    .contain{
+        width: max-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
     transform: translate(-50%, -50%);
     display: grid;
     text-align: center;
@@ -147,6 +155,7 @@
     background: #400087;
     box-shadow: 0 0 20px 2px #00000047;
     border-radius: 2px;
+}
     a{
         
         padding: 10px 20px;
@@ -164,4 +173,20 @@
         font-size: 2em;
 
     }
+}
+
+@media (max-width:1000px) {
+    .wrapper{
+        align-content: center;
+        justify-items: center;
+        margin-top: 50px;
+        grid-template-columns: 1fr !important;
+        .title{
+            position: absolute;
+           
+            top: 6%;
+            left: 30%;
+        }
+    }
+    
 }

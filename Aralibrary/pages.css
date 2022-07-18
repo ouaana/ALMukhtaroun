@@ -1,0 +1,17 @@
+.containerr {
+  padding: 50px;
+  height: 100vh;
+}
+.containerr .wrraper {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background: #e9e9e9;
+  height: 100%;
+  gap: 10px;
+  padding: 10px;
+}
+.containerr .wrraper div {
+  background: white;
+  border-radius: 5px;
+  margin: 0;
+}/*# sourceMappingURL=pages.css.map */
